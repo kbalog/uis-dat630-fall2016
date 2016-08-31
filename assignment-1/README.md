@@ -56,10 +56,10 @@ Mind that the evaluation is case sensitive!
     - Use the same team name you used on the sign-up form.
     - Submissions are only allowed from uis.no email addresses.
     - This platform provides online evaluation and a real-time leaderboard.
-  * **Send your report, output file, and source code in email** to the student assistant
-    - The subject of the email should the `[DAT630] {teamname} Assignment 1`
+  * **Send your report, output file, and source code in email** to the student assistant Darío Garigliotti <dario.garigliotti@uis.no>
+    - The subject of the email should be `[DAT630] {teamname} Assignment 1`
     - The output file should be called `{teamname.out}` and should be zip-ed. This should be the exact same file (i.e., your final solution) that was submitted on kaggle.com
-    - The code should be zip-ed and contain a short README file explaining instructions for running it. Running this code should produce the exact same output that you attached to the email.
+    - The code should be zip-ed and contain a short README file explaining instructions on how to run it. Running this code should produce the exact same output that you attached to the email.
     - The report should be max 2 pages (A4) and in pdf format.
   * The deadline for submitting all files is **12 Sept, 16:00**.
 
