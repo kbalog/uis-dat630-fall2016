@@ -70,12 +70,17 @@ Mind that the evaluation is case sensitive!
   Yes. Only the best performing one will be considered.
   - **Is it obligatory to submit results on kaggle?**
   Yes. This way you can check if you passed the Accuracy threshold.
+  - **Should I use my uis.no address on kaggle?** Yes, as the competition is restricted to people with an uis.no address. Contact the lecturer if you're following this course but you don't have an uis.no email address.
   - **Does everything have to be written from the ground up?**
   For the decision tree part, yes. You are allowed to use libraries for data structures and data preprocessing though.
   - **What resources can be used?**
   Everything, except machine learning libraries and ready-made decision tree implementations. It is OK to look at online tutorials and examples, and to re-use them, but you will need to be able to explain every line of code you submit.
+  - **Any advice on which programming language to use?** We will be using Python (v3.5) during the practical sessions in the course, so Python is a good choice (but it is merely and advice, not a requirement).
   - **What should I do if I'm feeling lost?**
-  1) Try to build a decision tree on paper by performing the steps of the algorithm manually (see the exercise and the solution from Lecture 3). 2) Ask for help from the student assistant.
+  Try to follow these steps: 1) build a decision tree on paper by performing the steps of the algorithm manually (see the exercise and the solution from Lecture 3); 2) implement what you just did on paper and apply it on the same toy data set; 3) apply the algorithm for the assignment's data set (you will face some issues, e.g.,  missing attributes, that you'll have to deal with). You can ask for help from the student assistant at any point.
+  - **Which decision tree algorithm should I implement?** It's up to you. The one we used for the exercise is [ID3](https://en.wikipedia.org/wiki/ID3_algorithm). It cannot deal with missing attributes and does not include stopping criteria or pruning; you'll have to figure out how to do that. There exist extensions to ID3, like [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm). You can look for ideas there. The recommendation is to implement ID3 and extend it as you see fit so that it works effectively on the adult dataset.
+  - **How general should the implementation be?** It does not have to be general, it should work only on the adult dataset. You may hard-code attribute types and even splitting conditions for continuous attributes. You may also hard-code which attributes should be used and which are to be ignored. However, when running the code, it should produce an output file from the two input files (training and test data) without any human intervention.
+  - **Should each member of the team write a separate report?** No, there is a single report from the team.
   - **Is it possible to get a deadline extension?**
   No. Don't even ask.
   - **Can I take the exam if I fail to complete this assignment?**
