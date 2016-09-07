@@ -1,5 +1,7 @@
 # Assignment 1
 
+**Update: some significant help has been made available [here](help/).**
+
 ## Task
 
 This assignment is about solving a classification problem, and it has two parts:
