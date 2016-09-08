@@ -4,7 +4,7 @@ You can find a "skeleton" of the code written in Python (3.5) that builds a deci
 
 One practical challenge in this assignment could be how to represent the decision tree. In this implementation, node objects are stored in a list (array), where each node stores pointers to parent and child nodes.
 
-Running this code (without the missing parts) would produce the following output:
+Running this code (**with the missing parts completed**) would produce the following output:
 ```
 Build model:
 [Root node] 'Outlook' == ?
