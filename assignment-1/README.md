@@ -26,7 +26,7 @@ The assignment uses the Adult dataset. The task is to predict, based on census d
   - Training set: `data/adult.train`. The file contains 32561 records in total. Each line corresponds to a record, with the attributes comma separated. The last attribute is the target class label: <=50K or >50K.
   - Test set: `data/adult.test`. The file contains 16281 records. It has the exact same format as `adult.train`, except the last column. I.e., the class labels are missing from the test file; your task is to predict these and output the predictions to a separate file.
   - There are 14 attributes, a mixture of categorical and continuous ones. Mind that there are missing attribute values (denoted by ?). See the `adult.txt` file under the `data` folder for further details.
-  - The `eval.py` script can be used for evaluation during development (if the holdout method or cross-validation is employed).
+  - The `eval.py` (for Python 2.7) and `eval3.py` (for Python 3.x) scripts can be used for evaluation during development (if the holdout method or cross-validation is employed).
     * The `toy_data` folder contains a toy-sized ground truth set and predictions; this is only provided to allow you to try out the evaluation script. Run `python eval.py toy_data/test.gt toy_data/test.pred` from the assignment's root folder.
 
 
