@@ -8,7 +8,7 @@
 |   | Tue | Exploring Data | [slides](https://speakerdeck.com/kbalog/dat630-exploring-data), [exercises](exercises/20160830.pdf), [solutions](exercises/20160830-sol.pdf) |
 | | Wed | Classification (Decision Trees) | [slides](https://speakerdeck.com/kbalog/dat630-classification), [exercise](exercises/20160831.pdf), [solution](exercises/20160831-sol.pdf) |
 | 2 (05/09) | Mon-Wed | Working on [Assignment 1](assignment-1/) |  |
-| 3 (12/09) | Mon | Practicum | |
+| 3 (12/09) | Mon | [Practicum 1](practicum-1/) (attribute transformations, proximity calculations, summary statistics, visualization) | |
 | | Tue-Wed | Classification | |
 | 4 (19/09) | Mon-Wed | Clustering | |
 | 5 (26/09) | Mon-Wed | TBA | |
