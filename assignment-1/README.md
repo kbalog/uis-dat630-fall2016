@@ -48,7 +48,11 @@ Mind that the evaluation is case sensitive!
 
 ## Help
 
-A code skeleton (written in Python) is made available [here](help/).
+  * A code skeleton (written in Python) is made available [here](help/).
+  * Some techniques that will help you to improve accuracy
+    - Ignoring certain attributes
+    - Early stopping: don't split the node further if the number of training instances is < X; make a leaf node with the majority class
+    - Dealing with missing attributes: you can ignore these when building the tree and substitute missing values with the median/mode when applying the model on test data
 
 
 ## Submission
