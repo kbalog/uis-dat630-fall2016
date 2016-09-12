@@ -1,7 +1,5 @@
 # Assignment 1
 
-**Update: some significant help has been made available [here](help/).**
-
 ## Task
 
 This assignment is about solving a classification problem, and it has two parts:
@@ -48,6 +46,10 @@ etc.
 where Id is the line number and Target is the prediction (<=50K or >50K).
 Mind that the evaluation is case sensitive!
 
+## Help
+
+A code skeleton (written in Python) is made available [here](help/).
+
 
 ## Submission
 
@@ -64,6 +66,12 @@ Mind that the evaluation is case sensitive!
     - The code should be zip-ed and contain a short README file explaining instructions on how to run it. Running this code should produce the exact same output that you attached to the email.
     - The report should be max 2 pages (A4) and in pdf format.
   * The deadline for submitting all files is **12 Sept, 16:00**.
+  * Late submissions are allowed until Saturday. With each day, the accuracy threshold is increased by 1%. That is:
+    - Deliver by 13 Sept, 16:00: min. accuracy = 0.81
+    - Deliver by 14 Sept, 16:00: min. accuracy = 0.82
+    - Deliver by 15 Sept, 16:00: min. accuracy = 0.83
+    - Deliver by 16 Sept, 16:00: min. accuracy = 0.84
+    - Deliver by 17 Sept, 16:00: min. accuracy = 0.85
 
 
 ## FAQ
