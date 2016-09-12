@@ -85,16 +85,28 @@ def binarize(record):
 #  - $f_{11}$ = the number of attributes where $x$ was 1 and $y$ was 1
 
 # #### Simple Matching Coefficient
-# Compute $SMC = \frac{f_{11}+f_{00}}{f_{01}+f_{10}+f_{11}+f_{00}}$
-# TODO
+# Compute (f_11 + f_00) / (f_01 + f_10 + f_11 + f_00).
+# In simple terms, it is the number of matching attributes divided by the number of all attributes.
 def sim_smc(x, y):
-    return 0
+    matches = 0
+    for idx, val in enumerate(x):
+        if x[idx] == y[idx]:
+            matches += 1
+    return matches / len(x)
 
 # #### Jaccard Coefficient
-# Compute $J = \frac{f_{11}}{f_{01}+f_{10}+f_{11}}$
-# TODO
+# Compute (f_11) / (f_01 + f_10 + f_11).
+# In simple terms, it is the number of matching attributes divided by the number of all attributes,
+# **excluding** cases where both attributes are 0.
 def sim_jaccard(x, y):
-    return 0
+    matches = 0
+    nonzeros = 0
+    for idx, val in enumerate(x):
+        if x[idx] + y[idx] > 0:
+            nonzeros += 1
+            if x[idx] == y[idx]:
+                matches += 1
+    return matches / nonzeros
 
 
 # ### Main
