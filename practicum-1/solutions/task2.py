@@ -52,8 +52,27 @@ def load_data(filename):
 # This function takes a record as input and returns a binarized record.
 # The binarized record is represented as a vector (python list).
 def binarize(record):
-    # TODO
     record_bin = []
+    # Gender: either 0 or 1.
+    if record['gender'] == "female":
+        record_bin += [1, 0]
+    else:
+        record_bin += [0, 1]
+        
+    # Age: 6 bits.
+    age_vect = [0, 0, 0, 0, 0, 0]
+    for idx, val in enumerate(age):
+        if record['age'] == val:
+            age_vect[idx] = 1
+    record_bin = record_bin + age_vect
+    
+    # Income: 3 bits.
+    income_vect = [0, 0, 0]
+    for idx, val in enumerate(income):
+        if record['income'] == val:
+            income_vect[idx] = 1
+    record_bin = record_bin + income_vect
+    
     return record_bin
 
 
@@ -83,9 +102,6 @@ def sim_jaccard(x, y):
 # Read input data into `records`.
 records = load_data("../data/task2_data.txt")
 
-# Read input data into `records`.
-records = load_data("../data/task2_data.txt")
-
 # Binarize all records.
 records_bin = []
 for record in records:
@@ -93,5 +109,28 @@ for record in records:
     records_bin.append(bin_vect)
     print(record, " => ", bin_vect)
 
+
 # Find the two most similar records using SMC and Jaccard.
-# TODO
+max_smc = 0
+max_smc_names = ""
+max_jacc = 0
+max_jacc_names = ""
+
+for i1 in range(len(records)):
+    for i2 in range(i1+1, len(records)):
+        s_smc = sim_smc(records_bin[i1], records_bin[i2])
+        s_jacc = sim_jaccard(records_bin[i1], records_bin[i2])
+        # print records[i1]['id'], records[i2]['id'], s_smc, s_jacc
+        if s_smc > max_smc:
+            max_smc = s_smc
+            max_smc_names = records[i1]['id'] + " - " + records[i2]['id']
+        if s_jacc > max_jacc:
+            max_jacc = s_jacc
+            max_jacc_names = records[i1]['id'] + " - " + records[i2]['id']
+
+print("Most similar pair using SMC: ")
+print("\t", max_smc_names)
+print("\tsimilarity: ", max_smc)
+print("Most similar pair using Jaccard: ")
+print("\t", max_jacc_names)
+print("\tsimilarity: ", max_jacc)
