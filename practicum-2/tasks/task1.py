@@ -3,14 +3,14 @@
 
 # # Implement a Naive Bayes classifier
 
-# In[14]:
+# In[25]:
 
 import csv
 
 
 # Complete the parts marked with #TODO
 
-# In[15]:
+# In[26]:
 
 class NB(object):
     def __init__(self):
@@ -23,14 +23,14 @@ class NB(object):
     def apply(self, attributes):
         if not self.trained:
             raise Exception("Model has not been trained")
-        label = "TODO"
+        label = "Iris-setosa"
         # TODO
         return label
 
 
 # Loading data 
 
-# In[16]:
+# In[27]:
 
 def load_data(filename):
     train_x = []
@@ -63,7 +63,7 @@ def load_data(filename):
 
 # Evaluating predictions
 
-# In[17]:
+# In[28]:
 
 def evaluate(predictions, true_labels):
     correct = 0
@@ -84,7 +84,36 @@ def evaluate(predictions, true_labels):
 
 # Load data
 
-# In[18]:
+# In[29]:
 
 train_x, train_y, test_x, test_y = load_data("../data/iris.data")
+
+
+# In[30]:
+
+nb = NB()
+
+
+# Train model
+
+# In[31]:
+
+nb.train(train_x, train_y)
+
+
+# Apply model
+
+# In[32]:
+
+predictions = []
+for instance in test_x:
+    label = nb.apply(instance)
+    predictions.append(label)
+
+
+# Evaluate predictions
+
+# In[36]:
+
+evaluate(predictions, test_y)
 
