@@ -2,6 +2,9 @@
 # coding: utf-8
 
 # # Implement a Naive Bayes classifier
+# 
+#   - a) Use categorical attributes by discretize each attribute into three equally-sized bins: low, medium, high.
+#   - b) Use continuous attributes and assume a Gaussian (normal) distribution. Estimate the parameters of the distribution (mean and variance) from the training data (you'll have different parameters for each attribute)!
 
 # In[25]:
 
@@ -14,19 +17,18 @@ import csv
 
 class NB(object):
     def __init__(self):
-        self.trained = False
-    
+        self.model = None
+
     def train(self, attributes, labels):
         # TODO
-        self.trained = True
-    
+        self.model = {}
+
     def apply(self, attributes):
-        if not self.trained:
+        if not self.model:
             raise Exception("Model has not been trained")
         label = "Iris-setosa"
         # TODO
         return label
-
 
 # Loading data 
 
