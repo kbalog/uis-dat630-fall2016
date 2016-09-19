@@ -11,9 +11,10 @@
 | 3 (12/09) | Mon | [Practicum 1](practicum-1/) (attribute transformations, proximity calculations, summary statistics, visualization) | |
 | | Tue | Classification (Rule-based classifier, k-NN, Naive Bayes, Bayesian classifiers) | [slides](https://speakerdeck.com/kbalog/dat630-classification-2), [exercises](exercises/20160913.pdf), [solutions](exercises/20160913-sol.pdf) |
 | | Wed | Classification (SVM, ensemble methods, neural networks, multiclass classification) | [slides](https://speakerdeck.com/kbalog/dat630-classification-3) |
-| 4 (19/09) | Mon | [Practicum 2](practicum-2/) (classification) | |
-|  | Tue-Wed | Clustering | |
-| 5 (26/09) | Mon | Practicum 3 (clustering) | |
+| 4 (19/09) | Mon | [Practicum 2](practicum-2/) (Naive Bayes classifier) | |
+|  | Tue | [Practicum 3](practicum-3/) (using classifiers from scikit-learn) | |
+|  | Wed | Clustering | |
+| 5 (26/09) | Mon | Practicum 4 (clustering) | |
 |  | Tue-Wed | TBA | |
 | 6 (03/10) | Mon-Wed | TBA | |
 | 7 (10/10) | Mon-Wed | TBA | |

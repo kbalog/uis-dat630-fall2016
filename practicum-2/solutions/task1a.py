@@ -1,12 +1,13 @@
 
 # coding: utf-8
 
-# # Implement a Naive Bayes classifier
+# # Task 1A) Implement a Naive Bayes classifier
 # 
-#   - a) Use categorical attributes by discretize each attribute into three equally-sized bins: low, medium, high.
-#   - b) Use continuous attributes and assume a Gaussian (normal) distribution. Estimate the parameters of the distribution (mean and variance) from the training data (you'll have different parameters for each attribute)!
+#   - We use categorical attributes by discretizing each attribute into three equally-sized bins: low, medium, high.
+#   - We need to apply smoothing to avoid zero probabilities.
+#   - Additionally, we compute probabilities in the log space.
 
-# In[176]:
+# In[1]:
 
 import csv
 from collections import Counter
@@ -17,9 +18,9 @@ import math
 ATTRS = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
 
 
-# Complete the parts marked with #TODO
+# ## Naive Bayes classifier using categorical attributes
 
-# In[177]:
+# In[2]:
 
 class NB(object):
     def __init__(self):
@@ -27,19 +28,20 @@ class NB(object):
     
     def train(self, attributes, labels):
         self.model = {}
-        numclasses = 3  # TODO this should be computed from the data
-        for l, freq in Counter(labels).items():
-            # class prior probabilities
-            self.model[l] = {'P(y)': freq / len(labels)}
+        ccounter = Counter(labels)
+        numclasses = len(ccounter)
+        for l, freq in ccounter.items():
+            # class prior probabilities P(Y)
+            self.model[l] = {'P(Y)': freq / len(labels)}
             # conditional probabilities P(X=x|Y=y)
             for a in ATTRS:
                 for v in ["low", "medium", "high"]:
-                    cnt = 0
-                    for i in range(len(attributes)):
-                        if attributes[i][a] == v and labels[i] == l:
-                            cnt += 1
+                    # count how many times attribute `a` has value `v` when the target class is `l`
+                    cnt = sum(attributes[i][a] == v and labels[i] == l for i in range(len(attributes)))
+                    # store is as key "a=v"
                     key = a + "=" + v
-                    self.model[l][key] = (1 + cnt) / (numclasses + freq)
+                    # apply Laplace smoothing
+                    self.model[l][key] = (cnt + 1) / (freq + numclasses)
                                 
         # pprint.pprint(self.model)
     
@@ -49,28 +51,26 @@ class NB(object):
         # P(Y|X) \propto P(Y) * P(X_1|Y) * ... * P(X_n|Y)
         # in log space: 
         # log P(Y|X) \propto log P(Y) + log P(X_1|Y) + ... + log P(X_n|Y)
-        maxp = -1000 
+        maxp = float("-inf") 
         maxl = None
         for l, p in self.model.items():
-            prob = math.log(p['P(y)'])
-            #s = "P(" + l + ")=" + str(prob)
+            prob = math.log(p['P(Y)'])  # log P(Y)
+            expl = "P(" + l + ")=" + str(prob)  # explanation string (only for debugging)
             for a in ATTRS:
                 key = a + '=' + attributes[a]
-                prob += math.log(p[key])
-                #s += " * P(" + key + "|" + l +")=" + str(prob)
-            #print(s)  # debug
+                prob += math.log(p[key])  # + log P(X_i|Y)
+                expl += " * P(" + key + "|" + l +")=" + str(prob)
+            #print(expl)  # debug
             if prob > maxp:
                 maxp = prob
                 maxl = l
-        
-        #print(maxl, maxp)
-        
+         
         return maxl
 
 
-# Loading data 
+# ### Loading data 
 
-# In[178]:
+# In[3]:
 
 def load_data(filename):
     train_x = []
@@ -83,13 +83,8 @@ def load_data(filename):
         for row in csvreader:
             if len(row) == 5:
                 i += 1
-                instance = {
-                    "sepal_length": float(row[0]),
-                    "sepal_width": float(row[1]),
-                    "petal_length": float(row[2]),
-                    "petal_width": float(row[3]),
-                }
-                label = row[4]
+                instance = {ATTRS[i]: float(row[i]) for i in range(4)}  # first four values are attributes
+                label = row[4]  # 5th value is the class label
                 if i % 3 == 0:  # test instance
                     test_x.append(instance)
                     test_y.append(label)
@@ -100,9 +95,9 @@ def load_data(filename):
     return train_x, train_y, test_x, test_y
 
 
-# Evaluating predictions
+# ### Evaluating predictions
 
-# In[179]:
+# In[4]:
 
 def evaluate(predictions, true_labels):
     correct = 0
@@ -115,15 +110,13 @@ def evaluate(predictions, true_labels):
 
     print("Accuracy:   ", correct / len(predictions))
     print("Error rate: ", incorrect / len(predictions))
-    
-    return 0
 
 
-# **Discretization**
+# ### Discretization
 # 
 # We need to replace numerical values with labels 'low', 'medium', 'high' such that 1/3 of the values are assigned 'low', 1/3 of the values are assigned 'medium', and 1/3 of the values are assigned 'high'. 
 
-# In[180]:
+# In[5]:
 
 def discretize(attributes):
     attrs2 = [{} for _ in range(len(attributes))]  # initialize list of empty dicts
@@ -147,42 +140,34 @@ def discretize(attributes):
 
 # ## Main logic
 
-# Load data
+# ### Load data
 
-# In[181]:
+# In[6]:
 
 train_x, train_y, test_x, test_y = load_data("../data/iris.data")
 
 
-# In[182]:
+# ### Discretize attribute values
+# Importantly, we do it on the entire data set (training and testing), to ensure that values are assigned to the same bins in the train and in the test part. We then split back the data into train and test.
 
-### Using discretization
-
-
-# In[183]:
-
-nb = NB()
-
-
-# Discretizatize attribute values
-
-# In[184]:
+# In[7]:
 
 x2 = discretize(train_x + test_x)
 train_x2 = x2[:len(train_x)]
 test_x2 = x2[-len(test_x):]
 
 
-# Train model
+# ### Train model
 
-# In[185]:
+# In[8]:
 
+nb = NB()
 nb.train(train_x2, train_y)
 
 
-# Apply model
+# ### Apply model
 
-# In[186]:
+# In[9]:
 
 predictions = []
 for instance in test_x2:
@@ -190,9 +175,9 @@ for instance in test_x2:
     predictions.append(label)
 
 
-# Evaluate predictions
+# ### Evaluate predictions
 
-# In[187]:
+# In[10]:
 
 evaluate(predictions, test_y)
 
