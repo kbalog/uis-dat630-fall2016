@@ -1,7 +1,7 @@
 Practicum 2
 ===========
 
-See [this document](../../Practicum.md) for general information about the practicums.
+See [this document](../Practicum.md) for general information about the practicums.
 
 Learning objectives:
 
