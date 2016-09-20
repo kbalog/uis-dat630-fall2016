@@ -4,6 +4,7 @@ Practicum 3
 See [this document](../Practicum.md) for general information about the practicums.
 
 Learning objectives:
+  - Familiarizing with numpy and matplotlib
   - Using various classifiers implemented in scikit-learn
 
 ## Task 1: Plotting Gaussian distributions for the Iris dataset
@@ -13,21 +14,23 @@ Learning objectives:
 
 ## Task 2. Comparing different classifiers on the Iris dataset
 
-  - Using the training/test splits from Practicum 2, train different classifiers and compare their performance by filling in the following table:
+  - Using the training/test splits from Practicum 2, train different classifiers and compare their performance by filling out the following table:
 
-| Method            | Accuracy | Error rate |
-| ----------------- | -------- | ---------- |
-| Decision tree     |          |            |
-| Nearest Neighbors |          |            |
-| Naive Bayes       |          |            |
-| SVM               |          |            |
-| Random Forest     |          |            |
+| Method               | Accuracy | Error rate |
+| -------------------- | -------- | ---------- |
+| Decision tree        |          |            |
+| Nearest Neighbors    |          |            |
+| Naive Bayes          |          |            |
+| SVM (linear kernel)  |          |            |
+| SVM (polyn. kernel)  |          |            |
+| SVM (RBF kernel)     |          |            |
+| Random Forest        |          |            |
 
   - Documentation for the classifiers can be found here:
     * [Decision trees](http://scikit-learn.org/stable/modules/tree.html)
     * [Nearest Neighbors](http://scikit-learn.org/stable/modules/neighbors.html)
     * [Naive Bayes](http://scikit-learn.org/stable/modules/naive_bayes.html)
-    * [SVM](http://scikit-learn.org/stable/modules/svm.html)
+    * [SVM](http://scikit-learn.org/stable/modules/svm.html) with different [kernels](http://scikit-learn.org/stable/auto_examples/svm/plot_svm_kernels.html)
     * [Random Forest](http://scikit-learn.org/stable/modules/ensemble.html#forests-of-randomized-trees)
 
 
