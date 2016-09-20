@@ -61,12 +61,9 @@ class NB(object):
         for l, p in self.model.items():
             prob = math.log(p['P(Y)'])  # log P(Y)
             expl = "P(" + l + ")=" + str(prob)  # explanation string (only for debugging)
-            for a in ATTRS:
-                pxy = norm.pdf(attributes[a], p[a]['mean'], p[a]['var'])
-                if pxy == 0:  # we are getting too close to zero
-                    prob += float("-inf")
-                else:
-                    prob += math.log(pxy)  # + log P(X_i|Y)
+            for a in ATTRS:                
+                pxy = normpdf(attributes[a], p[a]['mean'], p[a]['var'])
+                prob += math.log(pxy)  # + log P(X_i|Y)
                 expl += " * P(" + a + '=' + str(attributes[a]) + "|" + l +")=" + str(prob)
             #print(expl)  # debug
             if prob > maxp:
@@ -76,9 +73,19 @@ class NB(object):
         return maxl
 
 
-# ### Loading data 
+# Calculating probability density function for Gaussian distribution with a given mean and variance
 
 # In[5]:
+
+def normpdf(x, mean, var):
+    denom = (2*math.pi*var)**.5
+    num = math.exp(-(float(x)-float(mean))**2/(2*var))
+    return num/denom
+
+
+# ### Loading data 
+
+# In[6]:
 
 def load_data(filename):
     train_x = []
@@ -105,7 +112,7 @@ def load_data(filename):
 
 # ### Evaluating predictions
 
-# In[6]:
+# In[7]:
 
 def evaluate(predictions, true_labels):
     correct = 0
@@ -124,14 +131,14 @@ def evaluate(predictions, true_labels):
 
 # ### Load data
 
-# In[7]:
+# In[8]:
 
 train_x, train_y, test_x, test_y = load_data("../data/iris.data")
 
 
 # ### Train model
 
-# In[8]:
+# In[9]:
 
 nb = NB()
 nb.train(train_x, train_y)
@@ -139,7 +146,7 @@ nb.train(train_x, train_y)
 
 # ### Apply model
 
-# In[9]:
+# In[10]:
 
 predictions = []
 for instance in test_x:
@@ -149,7 +156,7 @@ for instance in test_x:
 
 # ### Evaluate predictions
 
-# In[10]:
+# In[11]:
 
 evaluate(predictions, test_y)
 
