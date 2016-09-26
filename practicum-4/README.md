@@ -22,6 +22,7 @@ Learning objectives:
 
   - Solve the previous task using the bisecting variant of K-Means
   - Measure the quality of the resulting clustering in terms of Sum of Squared Error (SSE)
+    * How does it compare to the SSE using regular K-Means?   
     * How does it compare to the SSE of the 'true' clustering?
 
 
