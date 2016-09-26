@@ -14,7 +14,7 @@
 | 4 (19/09) | Mon | [Practicum 2](practicum-2/) (Naive Bayes classifier) | |
 |  | Tue | [Practicum 3](practicum-3/) (using classifiers from scikit-learn) | |
 |  | Wed | Clustering | [slides](https://speakerdeck.com/kbalog/dat630-clustering), [exercises](exercises/20160921.pdf), [solutions](exercises/20160921-sol.pdf) |
-| 5 (26/09) | Mon | Practicum 4 (clustering) | |
+| 5 (26/09) | Mon | [Practicum 4](practicum-4/) (clustering) | |
 |  | Tue-Wed | TBA | |
 | 6 (03/10) | Mon-Wed | TBA | |
 | 7 (10/10) | Mon-Wed | TBA | |
