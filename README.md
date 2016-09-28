@@ -17,14 +17,14 @@
 | 5 (26/09) | Mon | [Practicum 4](practicum-4/) (clustering) | |
 |  | Tue | Text classification and clustering | [slides](https://speakerdeck.com/kbalog/dat630-text-classification-and-clustering), [exercises](exercises/20160927.pdf), [solutions](exercises/20160927-sol.pdf) |
 |  | Wed | Classification and clustering evaluation | [slides](https://speakerdeck.com/kbalog/dat630-classification-and-clustering-evaluation), [code](code/classification_eval.ipynb) |
-|  |  | Search engines | [slides](https://speakerdeck.com/kbalog/dat630-search-engines) | 
-| 6 (03/10) | Mon-Wed | TBA | |
+|  |  | Search engines | [slides](https://speakerdeck.com/kbalog/dat630-search-engines) |
+| 6 (03/10) | Mon-Wed | Practicum 5 | |
 | 7 (10/10) | Mon-Wed | TBA | |
 | 8 (17/10) | Mon-Wed | TBA | |
-| 9 (24/10) | Mon-Wed | Working on Assignment 2 | |
+| 9 (24/10) | Mon-Wed | Working on Assignment 3 | |
 | 10 (31/10) | Mon-Wed | TBA | |
 | 11 (07/11) | Mon-Wed | TBA | |
-| 12 (14/11) | Mon-Wed | Working on Assignment 3 | |
+| 12 (14/11) | Mon-Wed | Exercises, trial exam | |
 | 13 (21/11) | Mon-Wed | TBA | |
 
 
