@@ -18,8 +18,12 @@
 |  | Tue | Text classification and clustering | [slides](https://speakerdeck.com/kbalog/dat630-text-classification-and-clustering), [exercises](exercises/20160927.pdf), [solutions](exercises/20160927-sol.pdf) |
 |  | Wed | Classification and clustering evaluation | [slides](https://speakerdeck.com/kbalog/dat630-classification-and-clustering-evaluation), [code](code/classification_eval.ipynb) |
 |  |  | Search engines | [slides](https://speakerdeck.com/kbalog/dat630-search-engines) |
-| 6 (03/10) | Mon-Wed | Practicum 5 | |
-| 7 (10/10) | Mon-Wed | TBA | |
+| 6 (03/10) | Mon | Working on [Assignment 2](assignment-2/) | |
+|  | Tue | TBA | |
+|  | Wed | TBA | |
+| 7 (10/10) | Mon | Working on [Assignment 2](assignment-2/) | |
+|  | Tue | TBA | |
+|  | Wed | TBA | |
 | 8 (17/10) | Mon-Wed | TBA | |
 | 9 (24/10) | Mon-Wed | Working on Assignment 3 | |
 | 10 (31/10) | Mon-Wed | TBA | |
@@ -31,5 +35,5 @@
 ## Assignments
 
   * [Assignment 1](assignment-1/) (deadline: 12/09 16:00)
-  * Assignment 2 (TBA)
+  * [Assignment 2](assignment-2/) (deadline: 14/10 16:00)
   * Assignment 3 (TBA)
