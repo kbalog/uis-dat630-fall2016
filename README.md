@@ -19,12 +19,14 @@
 |  | Wed | Classification and clustering evaluation | [slides](https://speakerdeck.com/kbalog/dat630-classification-and-clustering-evaluation), [code](code/classification_eval.ipynb) |
 |  |  | Search engines | [slides](https://speakerdeck.com/kbalog/dat630-search-engines) |
 | 6 (03/10) | Mon | Working on [Assignment 2](assignment-2/) | |
-|  | Tue | TBA | |
-|  | Wed | TBA | |
+|  | Tue | Retrieval Models I. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-i), [exercises](exercises/20161004.pdf), [solutions](exercises/20161004-sol.pdf) |
+|  | Wed | Practicum 5 | |
 | 7 (10/10) | Mon | Working on [Assignment 2](assignment-2/) | |
-|  | Tue | TBA | |
-|  | Wed | TBA | |
-| 8 (17/10) | Mon-Wed | TBA | |
+|  | Tue | Retrieval Models II. | |
+|  | Wed | Retrieval Evaluation | |
+| 8 (17/10) | Mon | Practicum 6 | |
+|  | Tue | TBD | |
+|  | Wed | TBD | |
 | 9 (24/10) | Mon-Wed | Working on Assignment 3 | |
 | 10 (31/10) | Mon-Wed | TBA | |
 | 11 (07/11) | Mon-Wed | TBA | |
