@@ -5,14 +5,18 @@ See [this document](../Practicum.md) for general information about the practicum
 
 Learning objectives:
 
-  - Building an inverted index and a document (meta)data store
-  - Retrieval using the Boolean and Vector Space Models
+  - Ranking documents using the Vector Space Model
+  - Building an inverted index
 
-## Task 1
+## Task 1. Term weighting and vector space retrieval
 
-  - Score documents using the vector space model and TFIDF weighting
+  - Score a toy-sized document collection against a query using the vector space model (i.e., TFIDF term weighting and cosine similarity).
 
 
-## Task 1b
+## Task 2. Building an inverted index
 
-  - Extend the code from Task 1 to support multiple TFIDF term weighting schemes.
+  - You are given a sample (1000 documents) from the [The Reuters-21578 data collection](http://www.daviddlewis.com/resources/testcollections/reuters21578/) in `data/reuters21578-000.xml`
+  - The code that parses the XML and extract a list of preprocessed terms (tokenized, lowercased, stopwords removed) is already given.
+  - You are also given an InvIndex class that manages the posting lists operations.
+  - Build an inverted index from the input collection with the term frequencies stored.
+  - Save the inverted index to a text file. E.g., `termID docID1:freq1 docID2:freq2 ...`.
