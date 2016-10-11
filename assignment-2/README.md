@@ -80,7 +80,7 @@ Mind that the evaluation is case sensitive!
 ## FAQ
 
   - **Is it possible to submit results multiple times on kaggle?**
-  Yes, but only 3 times. Only the best performing one will be considered.
+  Yes, but only twice a day. Only the best performing one will be considered.
   - **Is it obligatory to submit results on kaggle?**
   Yes. This way you can check if you passed the Accuracy threshold.
   - **Should I use my uis.no address on kaggle?** Yes, as the competition is restricted to people with an uis.no address. Contact the lecturer if you're following this course but you don't have an uis.no email address.
