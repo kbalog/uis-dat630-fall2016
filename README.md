@@ -22,14 +22,14 @@
 |  | Tue | Retrieval Models I. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-i), [exercise](exercises/20161004.pdf), [solution](exercises/20161004-sol.pdf) |
 |  | Wed | [Practicum 5](practicum-5/) | |
 | 7 (10/10) | Mon | Working on [Assignment 2](assignment-2/) | |
-|  | Tue | Retrieval Models II. | |
+|  | Tue | Retrieval Models II. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-ii), [exercises](exercises/20161011.pdf), solutions |
 |  | Wed | Retrieval Evaluation | |
 | 8 (17/10) | Mon | Practicum 6 | |
-|  | Tue | TBD | |
-|  | Wed | TBD | |
+|  | Tue | Link analysis | |
+|  | Wed | Query modeling | |
 | 9 (24/10) | Mon-Wed | Working on Assignment 3 | |
-| 10 (31/10) | Mon-Wed | TBA | |
-| 11 (07/11) | Mon-Wed | TBA | |
+| 10 (31/10) | Mon-Wed | Entity Retrieval | |
+| 11 (07/11) | Mon-Wed | Entity Linking | |
 | 12 (14/11) | Mon-Wed | Exercises, trial exam | |
 | 13 (21/11) | Mon-Wed | TBA | |
 
