@@ -22,7 +22,7 @@
 |  | Tue | Retrieval Models I. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-i), [exercise](exercises/20161004.pdf), [solution](exercises/20161004-sol.pdf) |
 |  | Wed | [Practicum 5](practicum-5/) | |
 | 7 (10/10) | Mon | Working on [Assignment 2](assignment-2/) | |
-|  | Tue | Retrieval Models II. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-ii), [exercises](exercises/20161011.pdf), solutions |
+|  | Tue | Retrieval Models II. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-ii), [exercises](exercises/20161011.pdf), [solutions](exercises/20161011-sol.pdf) |
 |  | Wed | Retrieval Evaluation | |
 | 8 (17/10) | Mon | Practicum 6 | |
 |  | Tue | Link analysis | |
