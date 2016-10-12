@@ -23,7 +23,7 @@
 |  | Wed | [Practicum 5](practicum-5/) | |
 | 7 (10/10) | Mon | Working on [Assignment 2](assignment-2/) | |
 |  | Tue | Retrieval Models II. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-ii), [exercises](exercises/20161011.pdf), [solutions](exercises/20161011-sol.pdf) |
-|  | Wed | Retrieval evaluation | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-evaluation), [exercises](exercises/20161012.pdf) |
+|  | Wed | Retrieval evaluation | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-evaluation), [exercises](exercises/20161012.pdf), [solutions](exercises/20161012-sol.pdf) |
 | 8 (17/10) | Mon | Practicum 6 | |
 |  | Tue | Link analysis, Elastic search | |
 |  | Wed | Queries and Interfaces | |
