@@ -75,6 +75,11 @@ Mind that the evaluation is case sensitive!
     - The code should be zip-ed and contain a short README file explaining instructions on how to run it. Running this code should produce the exact same output that you attached to the email.
     - The report should be max 2 pages (A4) and in pdf format.
   * The deadline for submitting all files is **14 Oct, 16:00**.
+  * Late submissions are allowed until 22 Oct. With each day, the accuracy threshold is increased by 1%. That is:
+    - Deliver by 15 Oct, 16:00: min. accuracy = 0.81
+    - Deliver by 16 Oct, 16:00: min. accuracy = 0.82
+    - ...
+    - Deliver by 22 Oct, 16:00: min. accuracy = 0.88
 
 
 ## FAQ
