@@ -52,17 +52,28 @@ def dcg(rel, p):
     return 0
 
 
-# In[6]:
+# In[12]:
 
 for qid, ranking in sorted(rankings.items()):
     gt = gtruth[qid]    
     print("Evaluating", qid)
-    # printing gain levels for each document
+    
+    gains = [] # holds corresponding relevance levels for the ranked docs
     for doc_id in ranking: 
         gain = gt.get(doc_id, 0)
-        print(str(doc_id) + "(" + str(gain) + ")")
+        gains.append(gain)
+    print(gains)
+    
+    # relevance levels of the idealized ranking
+    gain_ideal = sorted([v for _, v in gt.items()], reverse=True)
+    print(gain_ideal)
     
     # TODO
     # - compute NDCG@5
     # - compute NDCG@10
+
+
+# In[ ]:
+
+
 
