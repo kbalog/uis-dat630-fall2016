@@ -62,7 +62,7 @@ To be added
 
 ## Code
 
-  - `indexer.py` parses and indexes the contents of a single file
+  - [indexer.py](code/indexer.py) parses and (bulk) indexes the contents of a single file
 
 
 ## Submission
