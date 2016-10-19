@@ -7,7 +7,9 @@ The task involves the following four main steps:
 
   1. Index the document collection using Elasticsearch.
     - See [this document](../Elasticsearch.md) for help on Elasticsearch.
+    - Use two fields, title and content.
   2. Perform a baseline retrieval using the BM25 retrieval model (default setting in Elasticsearch) and evaluate its performance.
+    - Search only in the content field.
     - Return the top 100 documents for each query and measure Mean Average Precision (MAP).
   3. Implement the Mixture of Language Models approach with two fields (title and content). Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
     - You need to reach a min. MAP score of XX in order to pass this assignment.
@@ -28,30 +30,39 @@ You may use any programming language/environment of your choice, but you are req
 
 The AQUAINT document collection consists of newswire text data in English, drawn from three sources: the Xinhua News Service (`xie`), the New York Times News Service (`nyt`), and the Associated Press Worldstream News Service (`apw`). It has been used in official benchmark evaluations conducted by National Institute of Standards and Technology (NIST).
 
-The text data are separated into directories by source (`apw`, `nyt`, `xie`); within each source, data files are subdivided by year, and within each year, there is one file per date of collection. Each file contains a stream of SGML-tagged text, i.e., blocks of text bounded by <DOC> and </DOC> tags.
+The text data are separated into directories by source (`apw`, `nyt`, `xie`); within each source, data files are subdivided by year, and within each year, there is one file per date of collection. Each file contains a stream of SGML-tagged text, i.e., blocks of text bounded by `<DOC>` and `</DOC>` tags.  Create an index with *title* (inside `<HEADING>`) and *content* fields (inside `<TEXT>`) and use `<DOCNO>` as the document identifier (docID).
 
 The collection is 1.1GB compressed and can be dowloaded from here: http://www.ux.uis.no/~balog/dat630/aquaint.zip
+
+Upon successful indexing, the index should contain 1,033,461 documents. (Assuming your index is called "aquaint", you can check it at http://localhost:9200/aquaint/_stats.)
 
 You are requested to delete the collection after this assignment.
 
 
 ### Queries
 
+The [queries.txt](data/queries.txt) file contains 50 queries in total.  Each line starts with a 3-digit queryID, followed by the query string.  E.g.,
+
+```
+336 Black Bear Attacks
+341 Airport Security
+...
+```
+
 
 ### Relevance judgments
+
+To be added
 
 
 ### Output file format
 
-For each input query, you need to output a ranked list of up to 100 documents, in the following format:
+To be added
 
-```
-TBA
-```
 
 ## Code
 
-A utility class and some sample code for indexing and retrieval will be provided in Python.
+  - `indexer.py` parses and indexes the contents of a single file
 
 
 ## Submission

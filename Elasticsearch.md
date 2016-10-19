@@ -2,7 +2,7 @@
 
 ## What is Elasticsearch?
 
-Open source search engine built on top of [Apace Lucene](http://lucene.apache.org/).
+[Elasticsearch](https://www.elastic.co/products/elasticsearch) is an open source search engine built on top of [Apace Lucene](http://lucene.apache.org/).
 Elasticsearch is distributed, which means that indices can be divided into shards and each shard can have zero or more replicas. All of its functionality is available through a RESTful API.
 
 ## Tutorials and Resources
@@ -206,8 +206,10 @@ Search documents (blog posts) for the query "search distributed".
 
 ### From the command line (or browser)
 
+See [search request from URI](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html) page for the description of parameters.
+
 ```
-curl 'http://localhost:9200/blog/post/_search?q=search+distributed&pretty=true'
+curl 'http://localhost:9200/blog/post/_search?q=search+distributed&_source=false&pretty=true'
 ```
 
 ```
@@ -227,25 +229,13 @@ curl 'http://localhost:9200/blog/post/_search?q=search+distributed&pretty=true'
         "_index": "blog",
         "_type": "post",
         "_id": "2",
-        "_score": 0.10848885,
-        "_source": {
-          "title": "On distributed search",
-          "user": "dilbert",
-          "postDate": "2011-12-12",
-          "body": "Distribution is hard. Distribution should be easy."
-        }
+        "_score": 0.10848885
       },
       {
         "_index": "blog",
         "_type": "post",
         "_id": "1",
-        "_score": 0.019489054,
-        "_source": {
-          "title": "On search",
-          "user": "dilbert",
-          "postDate": "2011-12-15",
-          "body": "Search is hard. Search should be easy."
-        }
+        "_score": 0.019489054
       }
     ]
   }
