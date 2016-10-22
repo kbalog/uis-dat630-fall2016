@@ -27,7 +27,7 @@
 | 8 (17/10) | Mon | [Practicum 6](practicum-6/) | |
 |  | Tue | Link analysis | [slides](https://speakerdeck.com/kbalog/dat630-link-analysis), [exercises](exercises/20161018.pdf), [solutions](exercises/20161018.xlsx) |
 |  | Wed | Queries and Information Needs | [slides](https://speakerdeck.com/kbalog/dat630-queries-and-information-needs) |
-| | | Elastic search | [HowTo](Elasticsearch.md), [code](code/elasticsearch.ipynb) |
+| | | Elasticsearch | [HowTo](Elasticsearch.md), [code](code/elasticsearch.ipynb) |
 | 9 (24/10) | Mon-Wed | Working on [Assignment 3](assignment-3/) | |
 | 10 (31/10) | Mon-Wed | Entity Retrieval | |
 | 11 (07/11) | Mon-Wed | Entity Linking | |
