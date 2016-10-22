@@ -25,9 +25,10 @@
 |  | Tue | Retrieval Models II. | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-models-ii), [exercises](exercises/20161011.pdf), [solutions](exercises/20161011-sol.pdf) |
 |  | Wed | Retrieval evaluation | [slides](https://speakerdeck.com/kbalog/dat630-retrieval-evaluation), [exercises](exercises/20161012.pdf), [solutions](exercises/20161012-sol.pdf) |
 | 8 (17/10) | Mon | [Practicum 6](practicum-6/) | |
-|  | Tue | Link analysis | [slides](https://speakerdeck.com/kbalog/dat630-link-analysis), [exercises](exercises/20161018.pdf) |
-|  | Wed | Queries and Information Needs, Elastic search | [slides](https://speakerdeck.com/kbalog/dat630-queries-and-information-needs) |
-| 9 (24/10) | Mon-Wed | Working on Assignment 3 | |
+|  | Tue | Link analysis | [slides](https://speakerdeck.com/kbalog/dat630-link-analysis), [exercises](exercises/20161018.pdf), [solutions](exercises/20161018.xlsx) |
+|  | Wed | Queries and Information Needs | [slides](https://speakerdeck.com/kbalog/dat630-queries-and-information-needs) |
+| | | Elastic search | [HowTo](Elasticsearch.md), [code](code/elasticsearch.ipynb) |
+| 9 (24/10) | Mon-Wed | Working on [Assignment 3](assignment-3/) | |
 | 10 (31/10) | Mon-Wed | Entity Retrieval | |
 | 11 (07/11) | Mon-Wed | Entity Linking | |
 | 12 (14/11) | Mon-Wed | Exercises, trial exam | |

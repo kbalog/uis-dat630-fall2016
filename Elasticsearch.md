@@ -5,6 +5,7 @@
 [Elasticsearch](https://www.elastic.co/products/elasticsearch) is an open source search engine built on top of [Apace Lucene](http://lucene.apache.org/).
 Elasticsearch is distributed, which means that indices can be divided into shards and each shard can have zero or more replicas. All of its functionality is available through a RESTful API.
 
+
 ## Tutorials and Resources
 
   * [Official API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html)
