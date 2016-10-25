@@ -52,10 +52,10 @@ The [queries.txt](data/queries.txt) file contains 50 queries in total.  Each lin
 
 ### Relevance judgments
 
-The [qrels.csv](data/qrels.csv) file contains the relevance judgments for the first 25 queries. Each line contains a queryID and the set of docIDs. The queryID and docID are separated by a comma, the docIDs are separated by spaces. (Note that relevance is binary, so the order in which these documents are listed does not matter.)
+The [qrels.csv](data/qrels.csv) file contains the relevance judgments for the first 25 queries. Each line contains a queryID and the set of docIDs. The queryID and docIDs are separated by a comma, the docIDs are separated by spaces. (Note that relevance is binary, so the order in which these documents are listed does not matter.)
 
 ```
-queryID,docID
+queryID,docIDs
 303,APW19980610.1778 APW19990525.0223 APW19990602.0039  ...
 307,APW19980602.0026 APW19980603.0021 APW19980810.1038 ...
 ...
@@ -64,11 +64,14 @@ queryID,docID
 
 ### Output file format
 
-The output file follows the same format as the qrels.csv file.  However, docIDs need to be in ranked order (the one with the highest relevance score first).  You may return up to 100 documents for each query.
+For every query in queries.txt, the output file should contain two columns: queryID and docIDs (i.e., the same format that is used in the qrels.csv file).  The docIDs are space separated and need to be in ranked order (the one with the highest relevance score first).  You may return up to 100 documents for each query.
+
 Important: you need to include the rankings for all 50 queries in your output file, but in you have the relevance assessments only for the first 25 of them. The full set will be used for the leaderboard, to determine the winner.
 
+The file should contain a header and have the following format:
+
 ```
-queryID,docID
+queryID,docIDs
 303,XIE19970211.0115 XIE20000522.0056 XIE19970513.0108 ...
 307,XIE19990501.0067 XIE19961203.0196 XIE19970621.0161 ...
 ...
