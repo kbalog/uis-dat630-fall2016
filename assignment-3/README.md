@@ -1,5 +1,10 @@
 # Assignment 3
 
+## Recent updates
+
+  - Python code for computing background language model probabilities added.
+
+
 ## Task
 
 This assignment is about solving a document retrieval problem.
@@ -11,8 +16,11 @@ The task involves the following four main steps:
   2. Perform a baseline retrieval using the BM25 retrieval model (default setting in Elasticsearch) and evaluate its performance.
     - Search only in the content field.
     - Return the top 100 documents for each query and measure Mean Average Precision (MAP).
-  3. Implement the Mixture of Language Models approach with two fields (title and content). Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
-    - You need to reach a min. MAP score of XX in order to pass this assignment.
+    - For the first 25 queries (for which you have the relevance assessments), you should get a MAP score around 0.25.
+  3. Implement the Mixture of Language Models (MLM) approach with two fields (title and content).
+    - For each query, obtain the top 200 documents using the default BM25 model, then re-rank these documents by computing the MLM score for each (and then return the top 100).
+    - Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
+    - You need to reach a min. MAP score of [TBD] (on the first 25 queries) in order to pass this assignment.
     - Submit your best ranking on kaggle.
     - The best performing team (each team member) will get 5 bonus points at the final exam.
   4. Write a report.
@@ -81,6 +89,7 @@ queryID,docIDs
 ## Code
 
   - [indexer.py](code/indexer.py) parses and (bulk) indexes the contents of a single file
+  - [background_lm.py](background_lm.py) computes background language model probabilities (for a given field)
 
 
 ## Submission
@@ -94,7 +103,7 @@ queryID,docIDs
     - This platform provides online evaluation and a real-time leaderboard.
   * **Send your report, output file, and source code in email** to the student assistant Darío Garigliotti <dario.garigliotti@uis.no>
     - The subject of the email should be `[DAT630] {teamname} Assignment 3`
-    - The output file should be called `{teamname.out}` and should be zip-ed. This should be the exact same file (i.e., your final solution) that was submitted on kaggle.com
+    - There should be two output files: `{teamname_bm25.out}` and `{teamname_mlm.out}`, and these should be zip-ed. The latter file should be your final solution that was submitted on kaggle.com
     - The code should be zip-ed and contain a short README file explaining instructions on how to run it. Running this code should produce the exact same output that you attached to the email.
     - The report should be max 2 pages (A4) and in pdf format.
   * The deadline for submitting all files is **2 Nov, 16:00**.
