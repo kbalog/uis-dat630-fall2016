@@ -16,7 +16,7 @@ The task involves the following four main steps:
   2. Perform a baseline retrieval using the BM25 retrieval model (default setting in Elasticsearch) and evaluate its performance.
     - Search only in the content field.
     - Return the top 100 documents for each query and measure Mean Average Precision (MAP).
-    - For the first 25 queries (for which you have the relevance assessments), you should get a MAP score around 0.25.
+    - For the first 25 queries (for which you have the relevance assessments), you should get a MAP score around 0.3.
   3. Implement the Mixture of Language Models (MLM) approach with two fields (title and content).
     - For each query, obtain the top 200 documents using the default BM25 model, then re-rank these documents by computing the MLM score for each (and then return the top 100).
     - Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
