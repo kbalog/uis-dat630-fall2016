@@ -2,6 +2,10 @@
 
 ## Recent updates
 
+  - New (complete) relevance assessments file (qrels2.csv) and score thresholds added. The old qrels.csv has been removed to avoid confusion.
+  - Google sign-up form added.
+  - There will be no submission on kaggle!
+  - Check the "Hints and notes" section.
   - Python code for computing background language model probabilities added.
 
 
@@ -16,13 +20,12 @@ The task involves the following four main steps:
   2. Perform a baseline retrieval using the BM25 retrieval model (default setting in Elasticsearch) and evaluate its performance.
     - Search only in the content field.
     - Return the top 100 documents for each query and measure Mean Average Precision (MAP).
-    - For the first 25 queries (for which you have the relevance assessments), you should get a MAP score around 0.3.
+    - You should get a MAP score around 0.05 (perhaps a bit lower, like 0.048).
   3. Implement the Mixture of Language Models (MLM) approach with two fields (title and content).
     - For each query, obtain the top 200 documents using the default BM25 model, then re-rank these documents by computing the MLM score for each (and then return the top 100).
     - Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
-    - You need to reach a min. MAP score of [TBD] (on the first 25 queries) in order to pass this assignment.
-    - Submit your best ranking on kaggle.
-    - The best performing team (each team member) will get 5 bonus points at the final exam.
+    - You need to reach a **MAP score of minimum 0.07** in order to pass this assignment.
+    - The best performing team (each team member) will get 5 bonus points at the final exam. There will be no live leaderboard for this assignment.
   4. Write a report.
     - Present a results table with Mean Average Precision scores for baseline BM25 and you MLM models.
     - Explain how did you choose the LM field weights and smoothing configuration.
@@ -60,7 +63,9 @@ The [queries.txt](data/queries.txt) file contains 50 queries in total.  Each lin
 
 ### Relevance judgments
 
-The [qrels.csv](data/qrels.csv) file contains the relevance judgments for the first 25 queries. Each line contains a queryID and the set of docIDs. The queryID and docIDs are separated by a comma, the docIDs are separated by spaces. (Note that relevance is binary, so the order in which these documents are listed does not matter.)
+The [qrels2.csv](data/qrels2.csv) file contains the relevance judgments for all queries. Each line contains a queryID and the set of docIDs. The queryID and docIDs are separated by a comma, the docIDs are separated by spaces. (Note that relevance is binary, so the order in which these documents are listed does not matter.)
+
+The new qrels file (qrels2.csv) contains only 45 queries, i.e., for 5 queries there are no relevance assessments. Just ignore those queries that are not in qrels2.csv when computing the MAP scores.
 
 ```
 queryID,docIDs
@@ -73,8 +78,6 @@ queryID,docIDs
 ### Output file format
 
 For every query in queries.txt, the output file should contain two columns: queryID and docIDs (i.e., the same format that is used in the qrels.csv file).  The docIDs are space separated and need to be in ranked order (the one with the highest relevance score first).  You may return up to 100 documents for each query.
-
-Important: you need to include the rankings for all 50 queries in your output file, but in you have the relevance assessments only for the first 25 of them. The full set will be used for the leaderboard, to determine the winner.
 
 The file should contain a header and have the following format:
 
@@ -92,18 +95,21 @@ queryID,docIDs
   - [background_lm.py](background_lm.py) computes background language model probabilities (for a given field)
 
 
+## Hints and notes
+
+  - You need to compute the background language model on the entire collection. Using only the top-ranked documents is wrong, and solutions that do that won't be accepted.
+  - Using Dirichlet smoothing should perform better than Jelinek-Mercer smoothing. When using Dirichlet smoothing, you might want to use different smoothing parameter values for the different fields.
+  - Use a single shard for the Elasticsearch index (otherwise the term statistics you get may be wrong).
+
+
 ## Submission
 
-  * Each team must **sign up** before the deadline here: TBA
+  * Each team must **sign up** before the deadline here: https://goo.gl/forms/KMddcPaJjJb0hQZ93
     - A team can be 2 or 3 people. Single-person teams are also possible (even though not recommended).
     - It is possible to form different teams for each assignment.
-  * **Submit your predictions at kaggle**: TBA
-    - Use the same team name you used on the sign-up form.
-    - Submissions are only allowed from uis.no email addresses.
-    - This platform provides online evaluation and a real-time leaderboard.
   * **Send your report, output file, and source code in email** to the student assistant Darío Garigliotti <dario.garigliotti@uis.no>
     - The subject of the email should be `[DAT630] {teamname} Assignment 3`
-    - There should be two output files: `{teamname_bm25.out}` and `{teamname_mlm.out}`, and these should be zip-ed. The latter file should be your final solution that was submitted on kaggle.com
+    - There should be two output files: `{teamname_bm25.out}` and `{teamname_mlm.out}`, and these should be zip-ed.
     - The code should be zip-ed and contain a short README file explaining instructions on how to run it. Running this code should produce the exact same output that you attached to the email.
     - The report should be max 2 pages (A4) and in pdf format.
   * The deadline for submitting all files is **2 Nov, 16:00**.
@@ -112,11 +118,9 @@ queryID,docIDs
 
 ## FAQ
 
-  - **Is it possible to submit results multiple times on kaggle?**
-  Yes, but only twice a day. Only the best performing one will be considered.
-  - **Is it obligatory to submit results on kaggle?**
-  Yes. This way you can check if you passed the required threshold.
-  - **Should I use my uis.no address on kaggle?** Yes, as the competition is restricted to people with an uis.no address. Contact the lecturer if you're following this course but you don't have an uis.no email address.
+  - **So kaggle is not used after all for this assignment?**
+  That's correct. It was not possible to set up this task as a competition on the kaggle platform.
+  - **Will there bonus points be awarded for the best performing team?** Yes. However, there won't be a live leaderboard. So you need to submit your best performing run and we'll make a ranking of all teams in the end.
   - **What resources can be used?**
   Everything can be used. It is OK to look at online tutorials and examples, and to re-use them, but you will need to be able to explain every line of code you submit.
   - **Any advice on which programming language to use?** We are using Python (v3.5) during the practical sessions in the course, so Python is a good choice (but it is merely and advice, not a requirement).
