@@ -2,12 +2,8 @@
 
 ## Recent updates
 
-  - New (complete) relevance assessments file (qrels2.csv) and score thresholds added. The old qrels.csv has been removed to avoid confusion.
-  - Google sign-up form added.
-  - There will be no submission on kaggle!
-  - Check the "Hints and notes" section.
-  - Python code for computing background language model probabilities added.
-
+  - Sample indexer code updated to use a single shard.
+  
 
 ## Task
 
@@ -99,7 +95,7 @@ queryID,docIDs
 
   - You need to compute the background language model on the entire collection. Using only the top-ranked documents is wrong, and solutions that do that won't be accepted.
   - Using Dirichlet smoothing should perform better than Jelinek-Mercer smoothing. When using Dirichlet smoothing, you might want to use different smoothing parameter values for the different fields.
-  - Use a single shard for the Elasticsearch index (otherwise the term statistics you get may be wrong).
+  - Use a single shard for the Elasticsearch index (otherwise the term statistics you get may be wrong); you need to set it
 
 
 ## Submission

@@ -71,7 +71,9 @@ def index(es, file_name):
 if __name__ == "__main__":
     es = Elasticsearch()
 
+    #es.indices.delete(index=INDEX_NAME)  # delete old index
+    
     if not es.indices.exists(INDEX_NAME):
-        es.indices.create(index=INDEX_NAME)
+        es.indices.create(index=INDEX_NAME, body={"settings": {"index": ELASTIC_SETTINGS}})
 
     index(es, "data/aquaint/nyt/2000/20000101_NYT.gz")
