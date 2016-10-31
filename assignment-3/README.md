@@ -2,8 +2,10 @@
 
 ## Recent updates
 
-  - Sample indexer code updated to use a single shard.
-  
+  - [Pseudo code](code/mlm_ranking.ipynb) is provided for MLM scoring.
+  - [Sample indexer code](code/indexer.py) updated to use a single shard.
+  - The default retrieval model depends on your Elasticsearch version; for 2.x it is TF/IDF, for 5.x it is BM25. It is OK to use the Elasticsearch default (whatever it is), just state it in your report. If you want to use BM25, see the *Hints and notes* section below.
+
 
 ## Task
 
@@ -13,19 +15,19 @@ The task involves the following four main steps:
   1. Index the document collection using Elasticsearch.
     - See [this document](../Elasticsearch.md) for help on Elasticsearch.
     - Use two fields, title and content.
-  2. Perform a baseline retrieval using the BM25 retrieval model (default setting in Elasticsearch) and evaluate its performance.
+  2. Perform a baseline retrieval using the default retrieval model in Elasticsearch and evaluate its performance.
     - Search only in the content field.
     - Return the top 100 documents for each query and measure Mean Average Precision (MAP).
-    - You should get a MAP score around 0.05 (perhaps a bit lower, like 0.048).
+    - You should get a MAP score around 0.048 if you use TF/IDF and around 0.064 if you use BM25.
   3. Implement the Mixture of Language Models (MLM) approach with two fields (title and content).
-    - For each query, obtain the top 200 documents using the default BM25 model, then re-rank these documents by computing the MLM score for each (and then return the top 100).
+    - For each query, obtain the top 200 documents using the default Elasticsearch model (using the "content" field only), then re-rank these documents by computing the MLM score for each (and then return the top 100).
     - Find the field weights, smoothing method, and smoothing parameter that yield the best performance.
     - You need to reach a **MAP score of minimum 0.07** in order to pass this assignment.
     - The best performing team (each team member) will get 5 bonus points at the final exam. There will be no live leaderboard for this assignment.
   4. Write a report.
-    - Present a results table with Mean Average Precision scores for baseline BM25 and you MLM models.
+    - Present a results table with Mean Average Precision scores for baseline Elasticsearch (TF/IDF or BM25) and you MLM models.
     - Explain how did you choose the LM field weights and smoothing configuration.
-    - Make a plot showing which queries were improved and which were hurt when moving from BM25 to MLM.
+    - Make a plot showing which queries were improved and which were hurt when moving from the default Elasticsearch model to MLM.
     - The report should be max 2 (A4) pages long, written in English, and in pdf format.
 
 You may use any programming language/environment of your choice, but you are required to submit the complete source code that produced your output.
@@ -88,14 +90,35 @@ queryID,docIDs
 ## Code
 
   - [indexer.py](code/indexer.py) parses and (bulk) indexes the contents of a single file
-  - [background_lm.py](background_lm.py) computes background language model probabilities (for a given field)
+  - [background_lm.py](code/background_lm.py) computes background language model probabilities (for a given field)
+  - [mlm_ranking.ipynb](code/mlm_ranking.ipynb) is the pseudo code for MLM scoring
 
 
 ## Hints and notes
 
-  - You need to compute the background language model on the entire collection. Using only the top-ranked documents is wrong, and solutions that do that won't be accepted.
-  - Using Dirichlet smoothing should perform better than Jelinek-Mercer smoothing. When using Dirichlet smoothing, you might want to use different smoothing parameter values for the different fields.
-  - Use a single shard for the Elasticsearch index (otherwise the term statistics you get may be wrong); you need to set it
+#### BM25 scoring
+
+The default retrieval model depends on your Elasticsearch version; for 2.x it is TF/IDF, for 5.x it is BM25.  
+
+You can change the default to BM25 in 2.x by adding this line to your `config/elasticsearch.yml` file (under your elasticsearch folder):
+
+```
+index.similarity.default.type: BM25
+```
+
+You will need to restart Elasticsearch and rebuild the index.
+
+#### MLM implementation
+
+  - You need to compute the background language model on the entire collection. Using only the top-ranked documents is wrong, and solutions that do that won't be accepted. A class that computes the background LM probabilities is already [provided](code/background_lm.py).
+  - Using Dirichlet smoothing should perform better than Jelinek-Mercer smoothing. When using Dirichlet smoothing, you can set the average field length as the value of the smoothing parameter for each field.
+  - Use a single shard for the Elasticsearch index (otherwise the term statistics you get may be wrong); you need to set it before building the index.
+  - You need to make sure that the same preprocessing is applied to queries that was used for indexing the documents.  Use `es.indices.analyze()` or the [Analyze API endpoint](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/indices-analyze.html).
+  - See the provided [skeleton code](code/mlm_ranking.ipynb).
+
+#### Indexing
+
+If you change the number of shards or the default similarity, you need to rebuild the index.  For that, you will first need to delete the old index.
 
 
 ## Submission
