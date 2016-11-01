@@ -36,7 +36,7 @@
 |  | Tue-Wed | Entity Linking | |
 | 12 (14/11) | Mon | No lecture | |
 |  | Tue-Wed | Exercises, trial exam | |
-| 13 (21/11) | Mon-Wed | TBA | |
+| 13 (22/11) | Tue | Trial exam results, final review | |
 
 
 ## Assignments
