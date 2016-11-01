@@ -29,9 +29,13 @@
 |  | Wed | Queries and Information Needs | [slides](https://speakerdeck.com/kbalog/dat630-queries-and-information-needs) |
 | | | Elasticsearch | [HowTo](Elasticsearch.md), [code](code/elasticsearch.ipynb) |
 | 9 (24/10) | Mon-Wed | Working on [Assignment 3](assignment-3/) | |
-| 10 (31/10) | Mon-Wed | Entity Retrieval | |
-| 11 (07/11) | Mon-Wed | Entity Linking | |
-| 12 (14/11) | Mon-Wed | Exercises, trial exam | |
+| 10 (31/10) | Mon | Working on [Assignment 3](assignment-3/) | |
+|  | Tue | Entity Retrieval I. | [slides](https://speakerdeck.com/kbalog/dat630-entity-retrieval-i) |
+|  | Wed | Entity Retrieval II. | |
+| 11 (07/11) | Mon | Practicum 7 | |
+|  | Tue-Wed | Entity Linking | |
+| 12 (14/11) | Mon | No lecture | |
+|  | Tue-Wed | Exercises, trial exam | |
 | 13 (21/11) | Mon-Wed | TBA | |
 
 
