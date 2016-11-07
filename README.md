@@ -32,7 +32,7 @@
 | 10 (31/10) | Mon | Working on [Assignment 3](assignment-3/) | |
 |  | Tue | Entity Retrieval I. | [slides](https://speakerdeck.com/kbalog/dat630-entity-retrieval-i) |
 |  | Wed | Entity Retrieval II. | [slides](https://speakerdeck.com/kbalog/dat630-entity-retrieval-ii) |
-| 11 (07/11) | Mon | Practicum 7 | |
+| 11 (07/11) | Mon | [Practicum 7](practicum-7/) | |
 |  | Tue-Wed | Entity Linking | |
 | 12 (14/11) | Mon | No lecture | |
 |  | Tue-Wed | Exercises, trial exam | |

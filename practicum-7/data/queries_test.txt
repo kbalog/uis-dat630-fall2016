@@ -1,0 +1,50 @@
+INEX_LD-20120111 vietnam war movie
+INEX_LD-20120222 guitar classical bach
+INEX_LD-20120411 bicycle sport races
+INEX_LD-20120522 digital music notation formats
+INEX_LD-2009074 web ranking scoring algorithm
+INEX_LD-2010043 List of films from the surrealist category
+INEX_LD-2012309 residents small island city-state  Malay Peninsula Chinese
+INEX_LD-2012325 successor James G. Blaine studied law
+INEX_LD-2012341 1997  Houston airport president
+INEX_LD-2012357  prima ballerina Bolshoi Theatre 1960
+INEX_LD-2012373 birds cannot fly
+INEX_LD-2012390 baseball player most homeruns national league
+INEX_XER-74 circus mammals
+INEX_XER-96 Pure object-oriented programing languages
+INEX_XER-113 Formula 1 drivers that won the Monaco Grand Prix
+INEX_XER-123 FIFA world cup national team winners since 1974
+INEX_XER-133 EU countries
+INEX_XER-144 chess world champions
+QALD2_te-11 Who is the Formula 1 race driver with the most races?
+QALD2_te-24 Who was the father of Queen Elizabeth II?
+QALD2_te-39 Give me all companies in Munich.
+QALD2_te-49 Which other weapons did the designer of the Uzi develop?
+QALD2_te-64 Give me all launch pads operated by NASA.
+QALD2_te-81 Which books by Kerouac were published by Viking Press?
+QALD2_te-92 Show me all songs from Bruce Springsteen released between 1980 and 1990.
+QALD2_tr-4 Which river does the Brooklyn Bridge cross?
+QALD2_tr-17 Give me all cities in New Jersey with more than 100000 inhabitants.
+QALD2_tr-29 Which awards did WikiLeaks win?
+QALD2_tr-41 Give me all soccer clubs in Spain.
+QALD2_tr-52 Which presidents were born in 1945?
+QALD2_tr-63 Give me all actors starring in Batman Begins.
+QALD2_tr-74 Which capitals in Europe were host cities of the summer olympic games?
+QALD2_tr-84 Give me all movies with Tom Cruise.
+SemSearch_ES-3 Bookwork
+SemSearch_ES-12 austin texas
+SemSearch_ES-21 charles darwin
+SemSearch_ES-30 eloan line of credit
+SemSearch_ES-39 james caldwell high school
+SemSearch_ES-51 lexus of maplewood
+SemSearch_ES-60 michael douglas
+SemSearch_ES-70 radio italia online
+SemSearch_ES-79 shobana masala
+SemSearch_ES-88 thomas jefferson
+SemSearch_ES-98 University of Texas at Austin
+SemSearch_ES-107 concord steel
+SemSearch_ES-120 lawrence general hospital
+SemSearch_ES-132 sealy mattress co
+SemSearch_ES-141 ventura county court
+SemSearch_LS-8 continents in the world
+SemSearch_LS-18 john lennon, parents
