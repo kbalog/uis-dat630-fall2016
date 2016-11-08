@@ -2,9 +2,7 @@
 
 ## Recent updates
 
-  - [Pseudo code](code/mlm_ranking.ipynb) is provided for MLM scoring.
-  - [Sample indexer code](code/indexer.py) updated to use a single shard.
-  - The default retrieval model depends on your Elasticsearch version; for 2.x it is TF/IDF, for 5.x it is BM25. It is OK to use the Elasticsearch default (whatever it is), just state it in your report. If you want to use BM25, see the *Hints and notes* section below.
+  - The final results are available [here](Final_results.md).
 
 
 ## Task
