@@ -33,7 +33,8 @@
 |  | Tue | Entity Retrieval I. | [slides](https://speakerdeck.com/kbalog/dat630-entity-retrieval-i) |
 |  | Wed | Entity Retrieval II. | [slides](https://speakerdeck.com/kbalog/dat630-entity-retrieval-ii) |
 | 11 (07/11) | Mon | [Practicum 7](practicum-7/) | |
-|  | Tue-Wed | Entity Linking | |
+|  | Tue | Entity Linking I. | [slides](https://speakerdeck.com/kbalog/dat630-entity-linking-i), [exercises](exercises/20161108.pdf) |
+|  | Wed | Entity Linking I. | |
 | 12 (14/11) | Mon | No lecture | |
 |  | Tue-Wed | Exercises, trial exam | |
 | 13 (22/11) | Tue | Trial exam results, final review |  |
