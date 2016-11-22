@@ -36,7 +36,7 @@
 |  | Tue | Entity Linking I. | [slides](https://speakerdeck.com/kbalog/dat630-entity-linking-i), [exercises](exercises/20161108.pdf), [solutions](exercises/20161108-sol.pdf) |
 |  | Wed | Entity Linking II. | [slides](https://speakerdeck.com/kbalog/dat630-entity-linking-ii), [exercises](exercises/20161109.pdf) |
 | 12 (14/11) | Mon | No lecture | |
-|  | Tue-Wed | Trial exam | [questions](exam/) |
+|  | Tue-Wed | Trial exam | [questions](exam/), [solution](exam/trial_exam-sol.pdf) |
 | 13 (22/11) | Tue | Trial exam results, final review |  |
 
 
