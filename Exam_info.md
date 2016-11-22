@@ -1,6 +1,6 @@
 # Exam Information
 
-last updated: 09/11/2016 — subject to changes
+last updated: 22/11/2016 — final
 
 ## Rules
 
