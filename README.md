@@ -1,5 +1,9 @@
 # UiS DAT630 Web Search and Data Mining course
 
+## Updates
+
+  * Trial exam questions and solutions are [here](exam/)
+
 ## Schedule
 
 | Week | Day | Topic | Resources |
