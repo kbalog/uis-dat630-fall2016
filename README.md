@@ -2,6 +2,8 @@
 
 ## Updates
 
+  * Slides in pdf format are [here](slides/)
+  * [Exam information](Exam_info.md) has been finalized
   * Trial exam questions and solutions are [here](exam/)
 
 ## Schedule
